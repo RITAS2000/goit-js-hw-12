@@ -32,8 +32,8 @@ img {
   max-width: 100%;
   height: auto;
 }
-.iziToast>.iziToast-close {
-  background: url(../img/x.png) no-repeat 50% 50% !important;
+.iziToast>button.iziToast-close {
+  background: url(../img/x.png) no-repeat 50% 50% ;
 }
 .iziToast>.iziToast-body .iziToast-message,
 .iziToast>.iziToast-body .iziToast-title {
