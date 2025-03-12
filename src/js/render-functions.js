@@ -8,7 +8,7 @@ const lightbox = new SimpleLightbox('.gallery a', {
 
 const gallery = document.querySelector('.gallery');
 
-export function createElement(hits) {
+export function renderElement(hits) {
   const galleryElements = hits
     .map(hit => {
       return `

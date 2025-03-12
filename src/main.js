@@ -3,7 +3,7 @@ import 'izitoast/dist/css/iziToast.min.css';
 import iconError from './img/octagon.svg';
 import iconOh from './img/oh.svg';
 import { getImg } from './js/pixabay-api.js';
-import { createElement, clearGallery } from './js/render-functions.js';
+import { renderElement, clearGallery } from './js/render-functions.js';
 
 export let value = '';
 export let page = 1;
@@ -43,7 +43,7 @@ form.addEventListener('submit', async event => {
         timeout: 3000,
       });
     } else {
-      createElement(hits);
+      renderElement(hits);
       const totalLi = document.querySelectorAll('.gallery-item').length;
 
       if (totalLi >= totalHits) {
@@ -104,7 +104,7 @@ buttonLoadMore.addEventListener('click', async () => {
   let hits = data.hits;
   const totalHits = data.totalHits;
 
-  createElement(hits);
+  renderElement(hits);
   if (page > 1) {
     const galleryItem = document.querySelector('.gallery-item');
     const cardHeight = galleryItem.getBoundingClientRect().height;
@@ -142,7 +142,6 @@ function loaderHidden() {
 function showLoader() {
   const loader = document.querySelector('.loader');
   const gallery = document.querySelector('.gallery');
-  const buttonLoadMore = document.querySelector('.more-button');
 
   if (page > 1) {
     if (gallery.children.length > 0) {
